@@ -1,0 +1,35 @@
+{
+  "name": "colour_windows_electron",
+  "version": "0.1.0",
+  "description": "Start typing....",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Algy Tynan",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.4.0",
+    "electron-abi": "^1.1.0"
+  },
+  "dependencies": {
+    "iohook": "^0.6.6",
+    "node-abi": "^2.19.1"
+  },
+  "iohook": {
+    "targets": [
+      "node-57",
+      "electron-76"
+    ],
+    "platforms": [
+      "win32",
+      "darwin"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  }
+}
