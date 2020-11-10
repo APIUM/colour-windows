@@ -7,11 +7,8 @@ const electron = require('electron');
 function getRandomPosition() {
   var screenElectron = electron.screen;
   var primaryScreen = screenElectron.getPrimaryDisplay();
-  console.log(primaryScreen)
-  x = primaryScreen.workAreaSize.width
-  y = primaryScreen.workAreaSize.height
-  console.log(x)
-  console.log(y)
+  let x = primaryScreen.workAreaSize.width
+  let y = primaryScreen.workAreaSize.height
   let randx = Math.floor(Math.random() * x)
   let randy = Math.floor(Math.random() * y)
   console.log(randx)
@@ -35,7 +32,7 @@ function createWindow () {
     width: 200,
     height: 200,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, 'src/preload.js')
     },
     backgroundColor: getRandomColor(),
     x: posx,
@@ -43,7 +40,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('src/index.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
