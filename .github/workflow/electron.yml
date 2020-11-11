@@ -1,0 +1,34 @@
+# name of your github action
+name: CI
+# this will help you specify where to run 
+on:
+  push:
+    branches:
+    # this will run on the master branch
+      - master 
+      # this is where the magic happens, each job happens in parallel btw
+  pull_request:
+    branches:
+      - master
+jobs:
+  build_on_mac:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+      with:
+        node-version: 10.1.0
+    - name: see directory
+      run: ls
+
+   build_on_win:
+    runs-on: windows-2016
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: feature/github-actions        
+    - uses: actions/setup-node@master
+      with:
+        node-version: 10.1.0
+    - name: see directory
+      run: ls
