@@ -1,18 +1,21 @@
 {
-  "name": "colour_windows_electron",
+  "name": "colour_windows",
   "version": "0.1.0",
   "description": "Start typing....",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "keywords": [],
   "author": "Algy Tynan",
   "license": "ISC",
   "devDependencies": {
     "electron": "^8.4.0",
-    "electron-abi": "^1.1.0"
+    "electron-abi": "^1.1.0",
+    "electron-builder": "^22.9.1"
   },
   "dependencies": {
     "iohook": "^0.6.6",
@@ -34,6 +37,13 @@
     ]
   },
   "build": {
-    "appId": "io.tynan.ColourWindows"
+    "appId": "io.tynan.ColourWindows",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "portable"
+    }
   }
 }
