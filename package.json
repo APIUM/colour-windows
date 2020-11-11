@@ -16,11 +16,12 @@
   },
   "dependencies": {
     "iohook": "^0.6.6",
-    "node-abi": "^2.19.1"
+    "node-abi": "^2.19.1",
+    "yarn": "^1.22.10"
   },
   "iohook": {
     "targets": [
-      "node-57",
+      "node-64",
       "electron-76"
     ],
     "platforms": [
@@ -31,5 +32,8 @@
       "x64",
       "ia32"
     ]
+  },
+  "build": {
+    "appId": "io.tynan.ColourWindows"
   }
 }
