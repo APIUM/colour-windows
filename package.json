@@ -10,7 +10,7 @@
     "dist": "electron-builder"
   },
   "keywords": [],
-  "author": "Algy Tynan",
+  "author": "Algy Tynan <algy@tynan.io>",
   "license": "ISC",
   "devDependencies": {
     "electron": "^8.4.0",
@@ -29,7 +29,8 @@
     ],
     "platforms": [
       "win32",
-      "darwin"
+      "darwin",
+	  "linux"
     ],
     "arches": [
       "x64",
@@ -44,6 +45,11 @@
     },
     "win": {
       "target": "portable"
+    },
+    "linux": {
+      "target": ["apk", "snap", "deb"],
+	  "desktop": "Colour Windows",
+	  "category": "Utility"
     }
   }
 }
